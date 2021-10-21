@@ -1,19 +1,20 @@
 ---
 title: "Follow me: more data wrangling tools"
 subtitle: "separate, unite, dates, and case_when()"
-author: "ESM 206 Fall 2020"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include = TRUE, warning = FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+# Attach packages
 library(tidyverse)
 library(lubridate)
 ```
 
 ## BEFORE YOU START: Save a renamed copy of this .Rmd
 
-- Before moving on, click **File > Save As** to save a copy of this .Rmd (also to the `src` folder in this project) that is updated with your first and last name in the file name (`a3_task2_firstname_lastname.Rmd`). 
+- Before moving on, click **File > Save As** to save a copy of this .Rmd that is updated with your first and last name in the file name (`a3_task2_firstname_lastname.Rmd`). 
 
 - Once you have saved your copy of the .Rmd, you can delete the generic original (if you want...or just leave it there) 
 
@@ -44,7 +45,7 @@ sw_sep_hair <- starwars %>% # Start with starwars
 
 # Note: you will get a message letting you know that it expected two pieces separated by a comma for each entry, but if there is NOT a comma then the second column is just populated with a missing value `NA`
 
-# Use View(sw_sep_hair) in the Console to ensure that the two columns show up
+# Look at sw_sep_hair to ensure that the two columns show up
 ```
 
 #### 1A. On your own
@@ -176,6 +177,7 @@ class(my_dates_converted) # Check the class
 
 # See how the output puts dates into nice YYYY-MM-DD format? And that the class() of my_dates_converted is "Date"? That's great! 
 ```
+
 #### 3B. On your own
 
 In the code chunk below, create a vector (using `c()`, as above) stored as `some_dates` that contains three values that represent dates as numbers, in mdy format: 11061972, 02142007,01301843. Then in the next line, use `lubridate::mdy()` to return them in date format, storing as a vector `some_dates_converted`. Write a third line to check the class of that vector. 
@@ -285,11 +287,10 @@ Note: If you add another condition within `case_when()` that is `TRUE ~ "some th
 Once you've completed the above: 
 
 - Knit your .Rmd
-- Go to the Git tab in RStudio
 - Stage all updated files (click box under 'Staged')
-- Press Commit, add commit message, click Commit
-- Click the blue (down arrow) button to "Pull" (should say already up to date)
-- Click the green (up arrow) button to "Push"
+- Commit with a concise, descriptive commit message
+- Pull to check for remote changes (this should say "Already up to date")
+- Push changes back to your repo
 - Once it's done, go back to the forked repo in your GitHub account, refresh, and ensure that your updates have been recorded & safely stored.
 
 
