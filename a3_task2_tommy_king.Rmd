@@ -170,8 +170,13 @@ In the code chunk below, use `ymd()` to convert a date that you choose in `YYYY-
 
 ```{r}
 # Your code here: 
+ymd(19990504)
 
+ymd("1999-05-04")
 
+ymd("1999/05/04")
+
+# trying the ymd() function with my birthday in various formats
 ```
 
 #### 3B. Follow me
@@ -196,8 +201,13 @@ In the code chunk below, create a vector (using `c()`, as above) stored as `some
 
 ```{r}
 # Your code here: 
+some_dates <- c(05041999, 06011996, 06201964)
+some_dates_converted <- mdy(some_dates)
+some_dates_converted
 
+class(some_dates_converted)
 
+# converting some random dates to mdy() format and checking their classification
 ```
 
 #### 3C. Follow me
