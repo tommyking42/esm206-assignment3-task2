@@ -58,7 +58,10 @@ Make sure to `View()` the resulting data frame (remember: run `View()` in the Co
 
 ```{r}
 # Your code here: 
-
+sw_split_name <- starwars %>% #starting with star wars data 
+  separate(col = name,  # separating the column 'name'
+           into = c("name_1", "name_2"), #into two columns
+           sep = "-") #at the first dash
 
 ```
 
@@ -92,7 +95,12 @@ Make sure to `View()` the resulting data frame (remember: run `View()` in the Co
 
 ```{r}
 # Your code here:
-
+sw_skin_sep <- starwars %>% # new dataset from the starwars data
+  separate(col = skin_color, # separating skin_color column
+           into = c("skin_1", "skin_2"),  # into two new columns
+           sep = ",",  # separated by a comma
+           extra = "merge", # merge everything after first column 
+           remove = FALSE) # do not remove original column
 
 ```
 
