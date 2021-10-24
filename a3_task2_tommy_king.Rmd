@@ -255,7 +255,7 @@ gasol_hookshots <- lakers %>% #new dataset from lakers
   mutate(date_new = ymd(date)) %>% # creating a new date column
   mutate(month_new = month(date_new)) %>%  # creating a new month column
   
-count(month_new)
+count(month_new) # counting number of hookshots per month
 
 ```
 
@@ -305,7 +305,11 @@ Note: If you add another condition within `case_when()` that is `TRUE ~ "some th
 
 ```{r}
 # Your code here: 
-
+storms_danger <- storms %>% 
+  mutate(danger = case_when(
+    status == "hurricane" ~ "high", 
+    status != "hurricane" ~ "moderate"
+  ))
 
 ```
 
