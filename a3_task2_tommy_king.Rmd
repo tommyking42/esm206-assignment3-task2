@@ -136,7 +136,11 @@ In the code chunk below, starting from the `mpg` data create a new data frame ca
 
 ```{r}
 # Your code here: 
-
+mpg_model_class <- mpg %>%  # new dataset from mpg data
+  unite(col = model_class, # new column called 'model_class'
+        c(model, class),  # that combines the model and class columns
+        sep = "-",  # separated by a dash
+        remove = FALSE) # retains original columns
 
 ```
 
